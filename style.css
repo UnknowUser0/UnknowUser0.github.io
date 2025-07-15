@@ -20,9 +20,20 @@ a:hover {
   text-decoration: underline;
 }
 
-code, pre {
-  background: #eee;
-  padding: 0.5em;
-  display: block;
+pre {
+  background-color: #f9f9f9;
+  border-left: 4px solid #007acc;
+  padding: 1rem;
+  margin: 1rem 0;
+  white-space: pre-wrap;
   overflow-x: auto;
+  font-family: monospace;
 }
+
+code {
+  background-color: #eee;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
