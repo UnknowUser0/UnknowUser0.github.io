@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 1rem;
+  background: #f4f4f4;
+  color: #333;
+}
+
+h1 {
+  color: #0066cc;
+}
+
+a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code, pre {
+  background: #eee;
+  padding: 0.5em;
+  display: block;
+  overflow-x: auto;
+}

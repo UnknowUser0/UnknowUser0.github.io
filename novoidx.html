@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NoVoidX Plugin Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>📘 NoVoidX Plugin Guide</h1>
+  <p>This guide explains how to configure the <strong>NoVoidX</strong> plugin.</p>
+
+  <h2>Configuration Overview</h2>
+  <pre><code>
+# NoVoidX Configuration
+enabled: true
+check-update: true
+
+worlds:
+  world:
+    enabled: true
+    void-threshold: -128
+    target-world: world_nether
+    target-y: 512
+    ration: 8
+
+  world_the_end:
+    enabled: true
+    void-threshold: -64
+    target-world: world
+    target-y: 512
+    ration: 1
+
+blindness-duration: 5
+teleport-cooldown: 3
+log: true
+  </code></pre>
+
+  <h2>Explanation</h2>
+  <ul>
+    <li><strong>enabled</strong>: Master switch to enable/disable the plugin.</li>
+    <li><strong>check-update</strong>: Auto-check for updates on startup.</li>
+    <li><strong>void-threshold</strong>: Y-level threshold for void detection.</li>
+    <li><strong>target-world</strong>: Destination world when falling into void.</li>
+    <li><strong>target-y</strong>: Y-coordinate to teleport player to.</li>
+    <li><strong>ration</strong>: Coordinate ratio between worlds (X/Z scaled).</li>
+    <li><strong>blindness-duration</strong>: Blindness duration (in seconds) after teleportation.</li>
+    <li><strong>teleport-cooldown</strong>: Time (in seconds) before a player can be teleported again.</li>
+    <li><strong>log</strong>: Enable or disable logging to console.</li>
+  </ul>
+
+  <p><a href="index.html">← Back to Home</a></p>
+</body>
+</html>
