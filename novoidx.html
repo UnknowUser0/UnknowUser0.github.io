@@ -5,6 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NoVoidX Plugin Guide</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.7;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      color: #0066cc;
+    }
+
+    pre {
+      background-color: #f4f4f4;
+      padding: 1em;
+      border-left: 4px solid #007acc;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    ul {
+      margin-top: 0.5rem;
+      padding-left: 1.5rem;
+    }
+
+    hr {
+      margin: 2rem 0;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+
+    a {
+      text-decoration: none;
+      color: #007acc;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <h1>🔧 NoVoidX Configuration Guide</h1>
@@ -17,13 +67,13 @@
 
   <pre><code>enabled: true</code></pre>
   <ul>
-    <li><strong>Description</strong>: Enables or disables the entire plugin.</li>
+    <li><strong>Description:</strong> Enables or disables the entire plugin.</li>
     <li><strong>Set to</strong> <code>false</code> to disable NoVoidX completely.</li>
   </ul>
 
   <pre><code>check-update: true</code></pre>
   <ul>
-    <li><strong>Description</strong>: Automatically checks for plugin updates when the server starts.</li>
+    <li><strong>Description:</strong> Automatically checks for plugin updates when the server starts.</li>
   </ul>
 
   <hr>
@@ -34,14 +84,12 @@
 
   <h3>Example: Overworld (<code>world</code>)</h3>
 
-  <pre><code>
-world:
+  <pre><code>world:
   enabled: true
   void-threshold: -128
   target-world: world_nether
   target-y: 512
-  ration: 8
-  </code></pre>
+  ration: 8</code></pre>
 
   <ul>
     <li><code>enabled</code>: Activates NoVoidX for this world.</li>
@@ -53,14 +101,12 @@ world:
 
   <h3>Example: The End (<code>world_the_end</code>)</h3>
 
-  <pre><code>
-world_the_end:
+  <pre><code>world_the_end:
   enabled: true
   void-threshold: -64
   target-world: world
   target-y: 512
-  ration: 1
-  </code></pre>
+  ration: 1</code></pre>
 
   <p>This configuration teleports players falling below Y <code>-64</code> in The End to the Overworld at Y <code>512</code>, maintaining the same X/Z location.</p>
 
@@ -70,12 +116,12 @@ world_the_end:
 
   <pre><code>blindness-duration: 5</code></pre>
   <ul>
-    <li><strong>Description</strong>: Applies a <strong>blindness effect</strong> for 5 seconds after teleportation.</li>
+    <li><strong>Description:</strong> Applies a <strong>blindness effect</strong> for 5 seconds after teleportation.</li>
   </ul>
 
   <pre><code>teleport-cooldown: 3</code></pre>
   <ul>
-    <li><strong>Description</strong>: Prevents a player from being teleported more than once within <strong>3 seconds</strong>.</li>
+    <li><strong>Description:</strong> Prevents a player from being teleported more than once within <strong>3 seconds</strong>.</li>
   </ul>
 
   <hr>
@@ -84,7 +130,7 @@ world_the_end:
 
   <pre><code>log: true</code></pre>
   <ul>
-    <li><strong>Description</strong>: Enables logging for when players are teleported by NoVoidX. Useful for monitoring and debugging.</li>
+    <li><strong>Description:</strong> Enables logging for when players are teleported by NoVoidX. Useful for monitoring and debugging.</li>
   </ul>
 
   <hr>
