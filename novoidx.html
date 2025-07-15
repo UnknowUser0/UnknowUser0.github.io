@@ -7,46 +7,94 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>📘 NoVoidX Plugin Guide</h1>
-  <p>This guide explains how to configure the <strong>NoVoidX</strong> plugin.</p>
+  <h1>🔧 NoVoidX Configuration Guide</h1>
 
-  <h2>Configuration Overview</h2>
+  <p>This file defines the behavior of the <strong>NoVoidX</strong> plugin, which prevents players from falling into the void by teleporting them to another world or location. Below is a breakdown of each setting and how to use it.</p>
+
+  <hr>
+
+  <h2>✅ General Settings</h2>
+
+  <pre><code>enabled: true</code></pre>
+  <ul>
+    <li><strong>Description</strong>: Enables or disables the entire plugin.</li>
+    <li><strong>Set to</strong> <code>false</code> to disable NoVoidX completely.</li>
+  </ul>
+
+  <pre><code>check-update: true</code></pre>
+  <ul>
+    <li><strong>Description</strong>: Automatically checks for plugin updates when the server starts.</li>
+  </ul>
+
+  <hr>
+
+  <h2>🌍 World-specific Configuration</h2>
+
+  <p>Each world has its own set of configurations. The plugin will monitor if players fall below a certain Y-level and teleport them to a designated world or location.</p>
+
+  <h3>Example: Overworld (<code>world</code>)</h3>
+
   <pre><code>
-# NoVoidX Configuration
-enabled: true
-check-update: true
-
-worlds:
-  world:
-    enabled: true
-    void-threshold: -128
-    target-world: world_nether
-    target-y: 512
-    ration: 8
-
-  world_the_end:
-    enabled: true
-    void-threshold: -64
-    target-world: world
-    target-y: 512
-    ration: 1
-
-blindness-duration: 5
-teleport-cooldown: 3
-log: true
+world:
+  enabled: true
+  void-threshold: -128
+  target-world: world_nether
+  target-y: 512
+  ration: 8
   </code></pre>
 
-  <h2>Explanation</h2>
   <ul>
-    <li><strong>enabled</strong>: Master switch to enable/disable the plugin.</li>
-    <li><strong>check-update</strong>: Auto-check for updates on startup.</li>
-    <li><strong>void-threshold</strong>: Y-level threshold for void detection.</li>
-    <li><strong>target-world</strong>: Destination world when falling into void.</li>
-    <li><strong>target-y</strong>: Y-coordinate to teleport player to.</li>
-    <li><strong>ration</strong>: Coordinate ratio between worlds (X/Z scaled).</li>
-    <li><strong>blindness-duration</strong>: Blindness duration (in seconds) after teleportation.</li>
-    <li><strong>teleport-cooldown</strong>: Time (in seconds) before a player can be teleported again.</li>
-    <li><strong>log</strong>: Enable or disable logging to console.</li>
+    <li><code>enabled</code>: Activates NoVoidX for this world.</li>
+    <li><code>void-threshold</code>: If a player’s Y-coordinate goes <strong>below -128</strong>, they will be teleported.</li>
+    <li><code>target-world</code>: The destination world, here it's <code>world_nether</code>.</li>
+    <li><code>target-y</code>: The Y-coordinate where the player will be teleported in the target world.</li>
+    <li><code>ration</code>: (Likely a typo, should be <code>ratio</code>) – The multiplier used to convert the player’s X/Z coordinates between worlds.</li>
+  </ul>
+
+  <h3>Example: The End (<code>world_the_end</code>)</h3>
+
+  <pre><code>
+world_the_end:
+  enabled: true
+  void-threshold: -64
+  target-world: world
+  target-y: 512
+  ration: 1
+  </code></pre>
+
+  <p>This configuration teleports players falling below Y <code>-64</code> in The End to the Overworld at Y <code>512</code>, maintaining the same X/Z location.</p>
+
+  <hr>
+
+  <h2>🕶 Teleportation Effects</h2>
+
+  <pre><code>blindness-duration: 5</code></pre>
+  <ul>
+    <li><strong>Description</strong>: Applies a <strong>blindness effect</strong> for 5 seconds after teleportation.</li>
+  </ul>
+
+  <pre><code>teleport-cooldown: 3</code></pre>
+  <ul>
+    <li><strong>Description</strong>: Prevents a player from being teleported more than once within <strong>3 seconds</strong>.</li>
+  </ul>
+
+  <hr>
+
+  <h2>📝 Logging</h2>
+
+  <pre><code>log: true</code></pre>
+  <ul>
+    <li><strong>Description</strong>: Enables logging for when players are teleported by NoVoidX. Useful for monitoring and debugging.</li>
+  </ul>
+
+  <hr>
+
+  <h2>📌 Notes</h2>
+
+  <ul>
+    <li>Make sure all world names (<code>target-world</code>, etc.) match your actual world folder names.</li>
+    <li>A value like <code>ration: 8</code> means that if the player is at X/Z 80 in the Overworld, they will be teleported to X/Z 10 in the Nether (80 / 8).</li>
+    <li>Always reload or restart the server after changing the config.</li>
   </ul>
 
   <p><a href="index.html">← Back to Home</a></p>
